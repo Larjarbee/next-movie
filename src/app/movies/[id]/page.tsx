@@ -187,7 +187,6 @@ const MovieDetail = () => {
               navigation={{
                 nextEl: ".swiper-btn-next",
                 prevEl: ".swiper-btn-prev",
-                // clickable: true,
               }}
               modules={[Navigation]}
               className="mySwiper"
@@ -292,7 +291,6 @@ const MovieDetail = () => {
                     //   slidesPerView: 2,
                     // },
                   }}
-                  pagination={{ el: ".swiper-pagination", clickable: true }}
                   navigation={{
                     nextEl: ".swiper-btn-next",
                     prevEl: ".swiper-btn-prev",
