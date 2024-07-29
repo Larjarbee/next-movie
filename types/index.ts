@@ -15,3 +15,8 @@ export interface TMovies {
   vote_average: number;
   vote_count: number;
 }
+
+export type TGenres = {
+  id: number;
+  name: string;
+};

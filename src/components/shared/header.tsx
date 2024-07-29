@@ -14,11 +14,11 @@ function Header() {
   const pathname = usePathname();
   return (
     <header className="fixed z-50 w-full bg-Black-60 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50">
-      <nav className="flex py-2 justify-between items-center max-w-7xl mx-auto">
-        <div>
+      <nav className="flex py-2 justify-between items-center card px-5 md:px-0">
+        <Link href="/">
           <Image src={logo} alt="logo" width={150} />
-        </div>
-        <div className="flex items-center gap-4 bg-Black-45 p-1 rounded-xl border-2 border-Black-90">
+        </Link>
+        <div className="hidden items-center gap-4 bg-Black-45 p-1 rounded-xl border-2 border-Black-90 md:flex">
           {[
             { name: "Home", path: "/" },
             { name: "Movies & Shows", path: "/movies" },

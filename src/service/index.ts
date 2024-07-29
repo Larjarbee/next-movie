@@ -1,4 +1,6 @@
-const baseUrl = "https://api.themoviedb.org/3";
+export const baseUrl = "https://api.themoviedb.org/3";
+export const apiKey = "api_key=d2e2d8a66a2176492ffafd8be2ab424e";
+export const imgUrl = "https://image.tmdb.org/t/p//w500/";
 
 const options = {
   method: "GET",

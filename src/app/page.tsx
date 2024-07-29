@@ -1,7 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import heroPng from "@/assets/pngs/hero.png";
-import backgroundPng from "@/assets/pngs/Background Images.png";
 import PlayIcon from "@/assets/svgs/play";
 import HeadsetIcon from "@/assets/svgs/headset";
 import TvIcon from "@/assets/svgs/tv";
@@ -9,7 +6,6 @@ import TabletIcon from "@/assets/svgs/tablet";
 import PhoneIcon from "@/assets/svgs/phone";
 import LaptopIcon from "@/assets/svgs/laptop";
 import GameIcon from "@/assets/svgs/game";
-import { fetchAPI } from "@/service";
 import ArrowLeftIcon from "@/assets/svgs/arrow-left";
 import ArrowRightIcon from "@/assets/svgs/arrow-right";
 import List from "@/components/home/list";
@@ -22,38 +18,12 @@ import {
 import Trending from "@/components/home/Trending";
 
 export default async function Home() {
-  const data = await fetchAPI("movie/popular?language=en-US");
-  console.log(data);
-
   return (
-    <div className="space-y-20">
-      <div className="pt-20 space-y-5">
-        <Trending />
-
-        <div className="max-w-4xl mx-auto text-center space-y-4">
-          <h2 className="text-4xl font-semibold">
-            The Best Streaming Experience
-          </h2>
-          <p>
-            StreamVibe is the best streaming experience for watching your
-            favorite movies and shows on demand, anytime, anywhere. With
-            StreamVibe, you can enjoy a wide variety of content, including the
-            latest blockbusters, classic movies, popular TV shows, and more. You
-            can also create your own watchlists, so you can easily find the
-            content you want to watch.
-          </p>
-
-          <Button className="gap-2">
-            <span>
-              <PlayIcon />
-            </span>{" "}
-            Start Watching Now
-          </Button>
-        </div>
-      </div>
+    <div className="space-y-10 pt-20">
+      <Trending />
 
       <div className="card space-y-10">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-start gap-4 flex-col md:flex-row md:items-center">
           <div className="space-y-2">
             <h4>Explore our wide variety of categories</h4>
             <p>
@@ -150,7 +120,7 @@ export default async function Home() {
       </div>
 
       <div className="card space-y-10">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-start gap-4 flex-col md:flex-row md:items-center">
           <div className="space-y-2">
             <h4>Frequently Asked Questions</h4>
             <p>
@@ -216,7 +186,7 @@ export default async function Home() {
       </div>
 
       <div className="card space-y-10">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-start gap-4 flex-col md:flex-row md:items-center">
           <div className="space-y-2">
             <h4>Choose the plan that's right for you</h4>
             <p>
@@ -275,21 +245,6 @@ export default async function Home() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-
-      <div className="card relative">
-        <Image alt="backgroundPng" src={backgroundPng} />
-        <div className="absolute m-0 inset-0 px-10 flex justify-between items-center md:px-20">
-          <div className="space-y-2">
-            <h4>Frequently Asked Questions</h4>
-            <p>
-              Got questions? We've got answers! Check out our FAQ section to
-              find answers to the most common questions about StreamVibe.
-            </p>
-          </div>
-
-          <Button>Ask Question</Button>
         </div>
       </div>
     </div>

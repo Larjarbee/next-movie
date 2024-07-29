@@ -5,11 +5,22 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import TrendingList from "./trendingList";
-import { fetchAPI } from "@/service";
+import { apiKey, baseUrl, fetchAPI } from "@/service";
 import { TMovies } from "../../../types";
+import { fetcher } from "@/service/fetcher";
+import useSWR from "swr";
+import Loading from "../shared/loading";
 
-async function Trending() {
-  const data = await fetchAPI("/trending/all/week?language=en-US");
+function Trending() {
+  //   const data = await fetchAPI("/trending/all/week?language=en-US");
+  const { data, error, isLoading } = useSWR(
+    `${baseUrl}/trending/movie/week?${apiKey}&language=en-US`,
+    fetcher
+  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="px-5 md:px-10 ">

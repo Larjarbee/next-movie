@@ -1,16 +1,15 @@
 import Link from "next/link";
 import React from "react";
 import { TMovies } from "../../../types";
+import { imgUrl } from "@/service";
 
 const TrendingList = (movie: TMovies) => {
-  const url = "https://image.tmdb.org/t/p//w500/";
-
   return (
-    <Link href={`${`/Movie/${movie.id}`}`}>
+    <Link href={`${`/movies/${movie.id}`}`}>
       <div
         className="h-[26rem] w-auto rounded-lg hover:opacity-50 "
         style={{
-          backgroundImage: `url( ${url + movie.backdrop_path})`,
+          backgroundImage: `url( ${imgUrl + movie.backdrop_path})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
@@ -19,7 +18,7 @@ const TrendingList = (movie: TMovies) => {
           <div className="flex justify-center items-center gap-5 p-10 rounded-lg flex-col md:flex-row">
             <img
               className="rounded-lg"
-              src={url + movie.poster_path}
+              src={imgUrl + movie.poster_path}
               alt="img"
               width={200}
             />

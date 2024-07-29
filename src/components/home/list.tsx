@@ -3,10 +3,26 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import CategoryList from "@/components/shared/category-list";
+import { Button } from "../ui/button";
+import ArrowRightIcon from "@/assets/svgs/arrow-right";
 import { Navigation } from "swiper/modules";
+import useSWR from "swr";
+import { fetcher } from "@/service/fetcher";
+import { apiKey, baseUrl } from "@/service";
+import { TGenres } from "../../../types";
+import CategoryList from "../shared/category-list";
+import Loading from "../shared/loading";
 
 function List() {
+  const { data: movieList, isLoading } = useSWR(
+    `${baseUrl}/genre/movie/list?${apiKey}&language=en`,
+    fetcher
+  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <Swiper
       slidesPerView={2}
@@ -33,9 +49,17 @@ function List() {
       modules={[Navigation]}
       className="mySwiper"
     >
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((el) => (
-        <SwiperSlide key={el}>
-          <CategoryList />
+      {movieList?.genres.map((el: TGenres) => (
+        <SwiperSlide key={el?.id}>
+          <div className="bg-Black-45 p-4 rounded-xl border border-Black-90">
+            <CategoryList id={el?.id} />
+            <div className="flex justify-between items-center">
+              <h6>{el?.name}</h6>
+              <Button size="icon" variant="ghost">
+                <ArrowRightIcon />
+              </Button>
+            </div>
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>
