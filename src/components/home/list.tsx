@@ -44,7 +44,6 @@ function List() {
       navigation={{
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
-        clickable: true,
       }}
       modules={[Navigation]}
       className="mySwiper"

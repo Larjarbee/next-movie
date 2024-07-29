@@ -24,6 +24,7 @@ import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/pagination";
 import ArrowLeftIcon from "@/assets/svgs/arrow-left";
 import ArrowRightIcon from "@/assets/svgs/arrow-right";
 
@@ -186,7 +187,7 @@ const MovieDetail = () => {
               navigation={{
                 nextEl: ".swiper-btn-next",
                 prevEl: ".swiper-btn-prev",
-                clickable: true,
+                // clickable: true,
               }}
               modules={[Navigation]}
               className="mySwiper"
@@ -248,7 +249,6 @@ const MovieDetail = () => {
               navigation={{
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
-                clickable: true,
               }}
               modules={[Navigation]}
               className="mySwiper"
@@ -296,7 +296,6 @@ const MovieDetail = () => {
                   navigation={{
                     nextEl: ".swiper-btn-next",
                     prevEl: ".swiper-btn-prev",
-                    clickable: true,
                   }}
                   modules={[Navigation]}
                   className="mySwiper"
