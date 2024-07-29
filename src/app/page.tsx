@@ -27,7 +27,7 @@ export default async function Home() {
           <div className="space-y-2">
             <h4>Explore our wide variety of categories</h4>
             <p>
-              Whether you're looking for a comedy to make you laugh, a drama to
+              Whether you are looking for a comedy to make you laugh, a drama to
               make you think, or a documentary to learn something new
             </p>
           </div>
@@ -124,7 +124,7 @@ export default async function Home() {
           <div className="space-y-2">
             <h4>Frequently Asked Questions</h4>
             <p>
-              Got questions? We've got answers! Check out our FAQ section to
+              Got questions? We have got answers! Check out our FAQ section to
               find answers to the most common questions about StreamVibe.
             </p>
           </div>
@@ -188,7 +188,7 @@ export default async function Home() {
       <div className="card space-y-10">
         <div className="flex justify-between items-start gap-4 flex-col md:flex-row md:items-center">
           <div className="space-y-2">
-            <h4>Choose the plan that's right for you</h4>
+            <h4>Choose the plan that is right for you</h4>
             <p>
               Join StreamVibe and select from our flexible subscription options
               tailored to suit your viewing preferences. Get ready for non-stop
