@@ -10,7 +10,7 @@ import background1Png from "@/assets/pngs/Background Images(1).png";
 
 function Footer() {
   return (
-    <div>
+    <div className="mt-10">
       <div className="card relative">
         <Image
           alt="backgroundPng"
