@@ -33,7 +33,7 @@ function Footer() {
 
           <Button>Start a Free Trail</Button>
         </div>
-        <div className="absolute inset-24 md:hidden">
+        <div className="absolute inset-5 mt-[25%] md:hidden">
           <div className="text-center space-y-2">
             <h4>Start your free trial today!</h4>
             <p>
