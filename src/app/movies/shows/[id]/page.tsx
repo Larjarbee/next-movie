@@ -27,6 +27,7 @@ import "swiper/css/pagination";
 import "swiper/css/pagination";
 import ArrowLeftIcon from "@/assets/svgs/arrow-left";
 import ArrowRightIcon from "@/assets/svgs/arrow-right";
+import Loading from "@/components/shared/loading";
 
 const ShowsDetail = () => {
   const [playing, setPlaying] = useState(false);
@@ -36,6 +37,7 @@ const ShowsDetail = () => {
     `${baseUrl}/tv/${id}?${apiKey}&language=en-US&append_to_response=videos`,
     fetcher
   );
+  console.log(movie);
 
   const { data: credits } = useSWR(
     `${baseUrl}/tv/${id}/credits?${apiKey}&language=en-US`,
@@ -57,6 +59,7 @@ const ShowsDetail = () => {
 
   return (
     <div className="card pt-20">
+      {isLoading && <Loading />}
       <div
         className="h-[35rem] w-auto rounded-xl overflow-hidden"
         style={{
@@ -412,6 +415,36 @@ const ShowsDetail = () => {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="bg-Black-55 p-5 space-y-5 rounded-xl border border-Black-80">
+        <p>Seasons</p>
+
+        <div className="grid grid-cols-2 gap-5 md:grid-cols-6">
+          {movie?.seasons?.map((movie: any) => {
+            return (
+              <div key={movie?.id} className=" rounded-lg hover:opacity-50 ">
+                <div className="mb-10 rounded-lg ">
+                  <div className=" rounded-lg">
+                    <img
+                      className="rounded-lg"
+                      src={imgUrl + movie?.poster_path}
+                      alt="img"
+                      width={200}
+                      loading="lazy"
+                    />
+                    <div className="flex items-center justify-between px-1">
+                      <h1 className=" text-white text-sm">{movie?.name}</h1>
+                      <h6 className=" text-gray-400 text-xs">
+                        {movie?.air_date}
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
