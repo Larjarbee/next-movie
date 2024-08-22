@@ -15,7 +15,6 @@ const TvLists = ({ params }: { params: { id: string } }) => {
     `${baseUrl}/discover/tv?${apiKey}&include_adult=false&include_video=false&language=en-US&page=${pageIndex}&sort_by=popularity.desc&with_genres=${params.id}`,
     fetcher
   );
-  console.log(data);
 
   const nextPageHandler = () => {
     if (pageIndex === data?.total_pages) {
