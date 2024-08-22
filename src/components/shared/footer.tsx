@@ -92,6 +92,7 @@ function Footer() {
           <hr />
           <div className="flex justify-between pt-5 pb-10 gap-y-5 flex-col text-center md:text-start md:flex-row">
             <p>@{new Date().getFullYear()} streamvib, All Rights Reserved</p>
+            <p>Figma by Praha</p>
             <div className="flex gap-4 justify-center">
               <p>Terms of Use</p>
               <p>Privacy Policy</p>
