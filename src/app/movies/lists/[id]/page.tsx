@@ -27,7 +27,7 @@ const MovieLists = ({ params }: { params: { id: string } }) => {
   return (
     <div className="card pt-24 space-y-5">
       {isLoading && <Loading />}
-      <div className="grid grid-cols-2 gap-1 md:grid-cols-4 lg:grid-cols-6">
+      <div className="grid grid-cols-2 gap-1 md:grid-cols-4 lg:grid-cols-5">
         {data?.results?.map((movie: TMovies) => (
           <Link href={`/movies/${movie.id}`} key={movie.id}>
             <Image
