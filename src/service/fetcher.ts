@@ -1,4 +1,3 @@
-type FetchParams = Parameters<typeof fetch>;
+import axios from "axios";
 
-export const fetcher = (...args: FetchParams) =>
-  fetch(...args).then((res) => res.json());
+export const fetcher = (url: string) => axios.get(url).then((res) => res.data);

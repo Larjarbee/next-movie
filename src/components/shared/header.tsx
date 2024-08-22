@@ -49,9 +49,11 @@ function Header() {
           ))}
         </div>
         <div className="flex gap-2 items-center md:gap-4">
-          <Button size="icon" variant="ghost">
-            <SearchIcon />
-          </Button>
+          <Link href="/search">
+            <Button size="icon" variant="ghost">
+              <SearchIcon />
+            </Button>
+          </Link>
           <Button size="icon" variant="ghost">
             <NotificationIcon />
           </Button>
