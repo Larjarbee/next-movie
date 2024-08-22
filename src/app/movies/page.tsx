@@ -24,14 +24,14 @@ function Movies() {
               <Button
                 size="icon"
                 variant="ghost"
-                className="swiper-button-prev bg-Black-60"
+                className="button-prev bg-Black-60"
               >
                 <ArrowLeftIcon />
               </Button>
               <Button
                 size="icon"
                 variant="ghost"
-                className="swiper-button-next bg-Black-60"
+                className="button-next bg-Black-60"
               >
                 <ArrowRightIcon />
               </Button>

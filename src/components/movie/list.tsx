@@ -43,8 +43,8 @@ function List() {
         },
       }}
       navigation={{
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
       }}
       modules={[Navigation]}
       className="mySwiper"
