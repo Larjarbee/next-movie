@@ -5,15 +5,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import TrendingList from "./trendingList";
-import { apiKey, baseUrl, fetchAPI } from "@/service";
+import { apiKey, baseUrl } from "@/service";
 import { TMovies } from "../../../types";
 import { fetcher } from "@/service/fetcher";
 import useSWR from "swr";
 import Loading from "../shared/loading";
 
 function Trending() {
-  //   const data = await fetchAPI("/trending/all/week?language=en-US");
-  const { data, error, isLoading } = useSWR(
+  const { data, isLoading } = useSWR(
     `${baseUrl}/trending/movie/week?${apiKey}&language=en-US`,
     fetcher
   );

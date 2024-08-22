@@ -12,6 +12,7 @@ import { apiKey, baseUrl } from "@/service";
 import { TGenres } from "../../../types";
 import Loading from "../shared/loading";
 import CategoryTvList from "../shared/category-tv";
+import Link from "next/link";
 
 function ListTv() {
   const { data: movieList, isLoading } = useSWR(
@@ -54,9 +55,11 @@ function ListTv() {
             <CategoryTvList id={el?.id} />
             <div className="flex justify-between items-center">
               <h6>{el?.name}</h6>
-              <Button size="icon" variant="ghost">
-                <ArrowRightIcon />
-              </Button>
+              <Link href={`/shows/lists/${el?.id}`}>
+                <Button size="icon" variant="ghost">
+                  <ArrowRightIcon />
+                </Button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>

@@ -20,7 +20,7 @@ function CategoryTvList({ id }: { id: number }) {
   return (
     <div className="grid grid-cols-2 gap-1">
       {data?.results.slice(0, 4).map((movie: TMovies) => (
-        <Link href={`/movies/shows/${movie.id}`} key={movie.id}>
+        <Link href={`/shows/${movie.id}`} key={movie.id}>
           <Image
             key={movie.id}
             src={imgUrl + movie.poster_path}
